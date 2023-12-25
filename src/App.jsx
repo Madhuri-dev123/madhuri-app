@@ -1,13 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
-import Counter from './Counter';
+import Todolist from './Todolist';
+import Todos from './Todo';
 function App() {
   return (
     <div className="mybox">
       <h1>Welcom to ReactJs</h1>
-      
-      <Counter s={100}i={10}></Counter>
-      <Counter s={200}i={5}></Counter>
+      <Todolist></Todolist>
+      <Todos></Todos>
     
     </div>
   );
