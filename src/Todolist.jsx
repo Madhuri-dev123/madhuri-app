@@ -6,26 +6,34 @@ function Todolist(){
     var [todos,setTodos]=React.useState([
                                  "get car",
                                  "get New House",
-                                 "bring vegtables",
-                                  "new bick",
-                                  "new boll"
+                                 
                                 ])
 
         //logic
 
-        function deleteTodo(i){
+        function addTodo(){
+            var nt = document.getElementById("d1").value;
+            setTodos([...todos,nt])
+        }
+
+        
+
+        var deleteTodo=React.useCallback(function(i){
             var temp =[...todos];
             temp.splice(i,1);
-            setTodos([...temp])
-        }
+           setTodos([...temp])
+        },[])
+            
+        
     return( 
         <div>
             <h1>Todolist</h1>
-            <input type="text"></input>
+            <input type="text" id="d1"></input>
+            <button onClick={()=>{addTodo()}}>Add Todo</button>
             <ul>
                 {
                     todos.map((todo,i)=>{
-                  return<Todo todo={todo}d={deleteTodo}i={i}></Todo>
+                  return<Todo key={i}todo={todo}d={deleteTodo}i={i}></Todo>
                     })
                 }
             </ul>

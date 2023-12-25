@@ -19,4 +19,4 @@ function Todo (props){
         </div>
     )
 }
-export default Todo;
+export default React.memo(Todo);
